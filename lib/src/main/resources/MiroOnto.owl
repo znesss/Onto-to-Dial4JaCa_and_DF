@@ -1,0 +1,668 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#"
+     xml:base="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-12="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#goes-with -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#goes-with">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Clothes"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-entity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-entity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-risk -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-risk"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-training -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-training">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BadMemories"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Clothes"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#GoodMemories"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#PositiveFeelings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#is-part-of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#is-part-of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#likes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#likes">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needs"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#suffers-from -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#suffers-from"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#sympof -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#sympof">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#MoodDisorders"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#brand -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#brand">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-sign -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#has-sign">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Objects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BadMemories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BadMemories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Memories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyMovements -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyMovements">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Clothes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Clothes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Objects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Objects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FacialExpression -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FacialExpression">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Feelings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Feelings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Intents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FuturePlans -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FuturePlans">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Intents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#GoodMemories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#GoodMemories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Memories"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Intents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Intents"/>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Memories -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Memories">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Intents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#MoodDisorders -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#MoodDisorders">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Feelings"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Objects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Objects">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#PositiveFeelings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#PositiveFeelings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Feelings"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#RiskLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#RiskLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Are_my_glasses_old_fashioned -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Are_my_glasses_old_fashioned">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+        <has-entity rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#glasses"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_braces_make_me_look_unattractive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_braces_make_me_look_unattractive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+        <has-entity rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#braces"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_you_think_I_look_ugly_with_pink_glasses -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_you_think_I_look_ugly_with_pink_glasses">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+        <has-entity rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#glasses"/>
+        <has-entity rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#pink"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#How_can_I_get_rid_of_this_sorrow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#How_can_I_get_rid_of_this_sorrow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#How_do_I_look_with_braces -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#How_do_I_look_with_braces">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_am_not_happy_at_all -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_am_not_happy_at_all">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_am_sad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_am_sad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_do_not_want_to_wear_glasses -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_do_not_want_to_wear_glasses">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_feel_so_gloomy_today -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_feel_so_gloomy_today">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_hate_these_hearing_aids -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_hate_these_hearing_aids">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_need_more_happiness_in_my_life -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_need_more_happiness_in_my_life">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Is_it_normal_to_feel_down_everyday -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Is_it_normal_to_feel_down_everyday">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#It_makes_me_sad_when_people_make_fun_of_my_glasses -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#It_makes_me_sad_when_people_make_fun_of_my_glasses">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#This_is_all_my_fault -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#This_is_all_my_fault">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#TrainingPhrases"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#arm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#arm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+        <has-sign>bruise</has-sign>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#being_sleepless -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#being_sleepless">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <sympof rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#depression"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#belt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#belt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#blue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#blue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#braces -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#braces">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#cheek -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#cheek">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#depression -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#depression">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#MoodDisorders"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#feeling_guilty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#feeling_guilty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <has-training rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#This_is_all_my_fault"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#feeling_ugly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#feeling_ugly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <has-training rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Are_my_glasses_old_fashioned"/>
+        <has-training rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_braces_make_me_look_unattractive"/>
+        <has-training rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Do_you_think_I_look_ugly_with_pink_glasses"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#frown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#frown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FacialExpression"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#glasses -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#glasses">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#grey -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#grey">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hair -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hair">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#head -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#head">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hearingAids -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#hearingAids">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Devices"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#lip -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#lip">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#BodyParts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#loss_of_appetite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#loss_of_appetite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needsProfessionalHelp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needsProfessionalHelp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#RiskLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needsRegularChecks -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#needsRegularChecks">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#RiskLevel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#pink -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#pink">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#red -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#red">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#ring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#ring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#sadness -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#sadness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#NegativeFeelings"/>
+        <has-training rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#I_feel_so_gloomy_today"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#smile -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#smile">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#FacialExpression"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#watch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#watch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Accessories"/>
+        <brand>Fossil</brand>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#white -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#white">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#yellow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#yellow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/zeinabnamakizadehesfahani/ontologies/2022/4/untitled-ontology-12#Colors"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
