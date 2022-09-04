@@ -114,6 +114,7 @@ public class OwlApiOntoLayer {
         return new ArrayList<OWLIndividual>(this.ontology.individualsInSignature().collect(Collectors.toList()));
     }
 
+//I am using it:
     public List<OWLClass> getSubClasses(OWLClass owlClass, boolean onlyDirectSub) {
         if (this.reasoner != null) {
             return new ArrayList<OWLClass>(this.reasoner.getSubClasses((OWLClassExpression)owlClass, onlyDirectSub).getFlattened());

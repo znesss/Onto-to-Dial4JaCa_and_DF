@@ -2,7 +2,7 @@ package Onto2DD;
 
 import java.util.List;
 
-public class OntoClassesRespMsg {
+public class MakeIntentRespMsg {
    private String type;
    private String title;
    private String textToSpeech;
@@ -10,7 +10,7 @@ public class OntoClassesRespMsg {
    private List<String> speech;
    private String condition;
 
-   public void OntoClassesRespMsg(boolean resetContexts, String action, List<String> affectedcontexts, List<String> parameters, List<String> messages, String type, String title, String textToSpeech, String lang, List<String> speech, String condition){
+   public void MakeIntentRespMsg(boolean resetContexts, String action, List<String> affectedcontexts, List<String> parameters, List<String> messages, String type, String title, String textToSpeech, String lang, List<String> speech, String condition){
       this.type = type;
       this.title = title;
       this.textToSpeech = textToSpeech;

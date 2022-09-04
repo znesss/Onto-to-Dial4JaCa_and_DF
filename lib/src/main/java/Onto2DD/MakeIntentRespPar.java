@@ -2,7 +2,7 @@ package Onto2DD;
 
 import java.util.List;
 
-public class OntoClassesRespPar {
+public class MakeIntentRespPar {
 	private String id;
 	private String name;
 	private boolean required;
@@ -17,7 +17,7 @@ public class OntoClassesRespPar {
 	private List<String> outputDialogContexts;
 
    
-	public void OntoClassesRespPar(String id, String name, boolean required, String dataType, String value, String defaultValue, boolean isList, List<String> prompts, List<String> promptMessages, List<String> noMatchPromptMessages, List<String> noInputPromptMessages, List<String> outputDialogContexts){
+	public MakeIntentRespPar(String id, String name, boolean required, String dataType, String value, String defaultValue, boolean isList, List<String> prompts, List<String> promptMessages, List<String> noMatchPromptMessages, List<String> noInputPromptMessages, List<String> outputDialogContexts){
 	  this.id = id;
       this.name = name;
       this.required = required;

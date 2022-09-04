@@ -1,7 +1,7 @@
 package Onto2DD;
 
-
 import java.io.File;
+import java.util.List;
 import java.util.Set;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -56,6 +56,14 @@ public class OwlApiQueryLayer {
         return factory.getOWLDataProperty(this.ontology.getOntologyIRI() + "#" + propertyName);
     }
 
+
+    //based on line 117 of OntoLayer:
+    public List<OWLClass> getSubClasses(String className, boolean onlyDirectSub) {
+    	return this.ontology.getSubClasses(this.getOWLClass(className), onlyDirectSub);
+    }   
+    
+    
+    
     public void addInstance(String instanceName) {
         this.ontology.addNewInstance(instanceName);
     }
@@ -68,6 +76,7 @@ public class OwlApiQueryLayer {
         return this.ontology.isInstanceOf(this.getOWLIndividual(instanceName), this.getOWLClass(conceptName));
     }
 
+    
     public Set<OWLNamedIndividual> getInstances(String conceptName) {
         return this.ontology.getInstances(this.getOWLClass(conceptName), false);
     }
@@ -97,7 +106,7 @@ public class OwlApiQueryLayer {
     public boolean isSubConceptOf(String subConceptName, String superConceptName) {
         return this.ontology.isSubConceptOf(this.getOWLClass(subConceptName), this.getOWLClass(superConceptName));
     }
-
+    
     public void saveOntology(String outputFile) throws OWLOntologyStorageException {
         this.ontology.saveOntology(outputFile);
     }

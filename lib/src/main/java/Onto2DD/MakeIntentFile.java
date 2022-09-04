@@ -1,14 +1,15 @@
 package Onto2DD;
 
+import java.util.Arrays;
 import java.util.List;
 
-public class OntoClasses
+public class MakeIntentFile
 {
    private String id;
    private String name;
    private boolean auto;
    private List<String> contexts;
-   private OntoClassesResp responses;
+   private List<MakeIntentResp> responses;
    private int priority;
    private boolean webhookUsed;
    private boolean webhookForSlotFilling;
@@ -18,12 +19,12 @@ public class OntoClasses
    private String condition;
    private List<String> conditionalFollowupEvents;
 
-   public void OntoClasses(String id, String name, boolean auto, List<String> contexts, OntoClassesResp responses, int priority, boolean webhookUsed, boolean webhookForSlotFilling, boolean fallbackIntent, List<String> events, List<String> conditionalResponses, String condition, List<String> conditionalFollowupEvents){
+   public void MakeIntentFile(String id, String name, boolean auto, List<String> contexts, MakeIntentResp resp, int priority, boolean webhookUsed, boolean webhookForSlotFilling, boolean fallbackIntent, List<String> events, List<String> conditionalResponses, String condition, List<String> conditionalFollowupEvents){
 	  this.id = id;
       this.name = name;
       this.auto = auto;
       this.contexts = contexts;
-      this.responses = responses;
+      this.responses = Arrays.asList(resp);
       this.priority = priority;
       this.webhookUsed = webhookUsed;
       this.webhookForSlotFilling = webhookForSlotFilling;
@@ -48,8 +49,8 @@ public class OntoClasses
    public void setContexts(List<String> contexts) {
 	   this.contexts = contexts;
    }
-   public void setResponses(OntoClassesResp responses) {
-	   this.responses = responses;
+   public void setResponses(MakeIntentResp resp) {
+	   this.responses = Arrays.asList(resp);
    }
    public void setPriority(int priority) {
 	   this.priority = priority;

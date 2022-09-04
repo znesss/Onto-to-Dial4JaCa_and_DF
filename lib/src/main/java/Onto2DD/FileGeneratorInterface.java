@@ -14,6 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JDesktopPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Color;
 
 public class FileGeneratorInterface {
 
@@ -41,16 +42,15 @@ public class FileGeneratorInterface {
 	public FileGeneratorInterface() {
 		initialize();
 	}
-
-    public String[] intentsNames;
-    public String fileName;
-    FileGenerator filegenerator= new FileGenerator();
-    OwlApiExtract owlapiextract= new OwlApiExtract();
+	public JFileChooser ontochooser= new  JFileChooser();
+    public String fileAddress;
+    public String selectedDest;
     private JLabel lblOntoRead = new JLabel("");
     private JLabel lblOntoName = new JLabel("");
-    private JButton btnLoadOnto = new JButton("Load the Ontology");
-    private JButton btnAsl = new JButton("Build .asl file");
-    private JButton btnJson = new JButton("Build .json files");
+    private JLabel lblDestRead = new JLabel("");
+    private JButton btnSetDest = new JButton("Set the Destination");
+    private JButton btnAsl = new JButton("Generate agent file");
+    private JButton btnJson = new JButton("Generate Dialogflow zip");
 
 	/**
 	 * Initialize the contents of the frame.
@@ -66,76 +66,101 @@ public class FileGeneratorInterface {
 		JButton btnBrowseOnto = new JButton("Browse the Ontology");
 		btnBrowseOnto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JFileChooser ontochooser= new  JFileChooser();
 				ontochooser.showOpenDialog(null);
 				File ontofile = ontochooser.getSelectedFile();
-				fileName= ontofile.getAbsolutePath();//getName()
-				if (fileName.endsWith(".owl") || fileName.endsWith(".OWL")){
-					btnLoadOnto.setEnabled(true);
-					lblOntoName.setText(ontofile.getName());
-					owlapiextract.main();
+				fileAddress= ontofile.getAbsolutePath();// full address
+				if (fileAddress.endsWith(".owl") || fileAddress.endsWith(".OWL")){
+					lblOntoName.setText(ontofile.getName()+" is chosen, "); //just name
+					//Load the Ontology:
+					String ontomsg= FileGenerator.readOnto(fileAddress);
+					lblOntoName.setText(lblOntoName.getText()+ontomsg);
+					String classesmsg= FileGenerator.getOntoClasses(fileAddress);
+					lblOntoRead.setText(classesmsg);
+					if (classesmsg == "Successfully read the Classes!") {
+						btnSetDest.setEnabled(true);
+					}
 				}
 				else {
 					lblOntoName.setText("Invalid file format. Please choose an owl file.");
 				}
 			}
 		});
-		btnBrowseOnto.setBounds(139, 18, 172, 23);
+		btnBrowseOnto.setBounds(139, 18, 185, 23);
 		frmFileGenerator.getContentPane().add(btnBrowseOnto);
-
-
-		//JButton btnLoadOnto = new JButton("Load the Ontology");
-		btnLoadOnto.setEnabled(false);
-		btnLoadOnto.addActionListener(new ActionListener() {
+		
+		
+		
+		btnSetDest.setEnabled(false);
+		btnSetDest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		        //String fileName = "src/main/resources/Miro-intents-names.owl";
-		        intentsNames= filegenerator.get_ontointent_classes(fileName);
-		        lblOntoRead.setText("Ontology Successfully read!");
-		        btnAsl.setEnabled(true);
+		        //Set the Source:
+		        JFileChooser destchooser = new JFileChooser();
+		        destchooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); 
+		        destchooser.showDialog(null, "Select Folder");
+		        File pathDest = destchooser.getSelectedFile();
+		        selectedDest = destchooser.getSelectedFile().toString();
+		        if (!pathDest.exists()){
+		        	selectedDest = selectedDest.substring(0, selectedDest.lastIndexOf("/"));
+		        }
+		        System.out.println("selectedDest: "+selectedDest);
+		        lblDestRead.setText(selectedDest);
+		        btnAsl.setEnabled(true); //should be changed. if the destination is selected, these have to be enabled
 		        btnJson.setEnabled(true);
-
 			}
 		});
-		btnLoadOnto.setBounds(160, 87, 129, 23);
-		frmFileGenerator.getContentPane().add(btnLoadOnto);
+		
+		
+		btnSetDest.setBounds(139, 108, 185, 23);
+		frmFileGenerator.getContentPane().add(btnSetDest);
+		btnAsl.setForeground(Color.BLACK);
 		btnAsl.setEnabled(false);
 
 
 
-		//JButton btnAsl = new JButton("Build .asl file");
 		btnAsl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String aslmsg=filegenerator.makeasl(intentsNames);
+				String aslmsg=FileGenerator.feedDJ(selectedDest);
 				JOptionPane.showMessageDialog(null, aslmsg, "done!", 1);
 			}
 		});
-		btnAsl.setBounds(160, 165, 129, 23);
+		btnAsl.setBounds(139, 178, 185, 23);
 		frmFileGenerator.getContentPane().add(btnAsl);
 		btnJson.setEnabled(false);
 
 
 
-
-		//JButton btnJson = new JButton("Build .json files");
 		btnJson.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String jsonmsg=filegenerator.makejsons(intentsNames);
-				JOptionPane.showMessageDialog(null, jsonmsg, "done!", 1);
+				String Name = ontochooser.getSelectedFile().getName().toString();
+				String folderName = "";
+				folderName = Name.substring(0, Name.lastIndexOf("."));
+				String[] jsonmsg=FileGenerator.feedDF(folderName,selectedDest);
+				JOptionPane.showMessageDialog(null, jsonmsg[0], "done!", 1);
+				JOptionPane.showMessageDialog(null, jsonmsg[1], "done!", 1);
+				JOptionPane.showMessageDialog(null, jsonmsg[2], "done!", 1);
+				JOptionPane.showMessageDialog(null, jsonmsg[3], "done!", 1);
 			}
 		});
-		btnJson.setBounds(160, 201, 129, 23);
+		btnJson.setBounds(139, 208, 185, 23);
 		frmFileGenerator.getContentPane().add(btnJson);
+		lblOntoRead.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
 		lblOntoRead.setHorizontalAlignment(SwingConstants.CENTER);
 
 
-		lblOntoRead.setBounds(139, 125, 172, 14);
+		lblOntoRead.setBounds(20, 70, 420, 18);
 		frmFileGenerator.getContentPane().add(lblOntoRead);
-		lblOntoName.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		lblOntoName.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblOntoName.setHorizontalAlignment(SwingConstants.CENTER);
 
 
-		lblOntoName.setBounds(34, 52, 377, 14);
+		lblOntoName.setBounds(20, 53, 420, 18);
 		frmFileGenerator.getContentPane().add(lblOntoName);
+		
+		
+		lblDestRead.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDestRead.setFont(new Font("Lucida Grande", Font.PLAIN, 10));
+		lblDestRead.setBounds(20, 138, 420, 18);
+		frmFileGenerator.getContentPane().add(lblDestRead);
 
 	}
 }

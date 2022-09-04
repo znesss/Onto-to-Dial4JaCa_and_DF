@@ -31,21 +31,6 @@ public class OwlApiLiteral {
 	private final String FunctorDataProperty       = "dataProperty";      // dataProperty(DataProperty,dataPropertyNameForJason)
 
 
-
-
-	//Tutorial:
-	//public static void main(String[] args) throws OWLOntologyCreationException {
-		//OWLOntologyManager man = OWLManager.createOWLOntologyManager();
-		//File file = new File("/Users/zeinabnamakizadehesfahani/Documents/Thesis/MiroOnto/MiroOnto.owl");
-		//OWLOntology o = man.loadOntologyFromOntologyDocument(file);
-		//System.out.println(o);
-		//String y= o.getOntologyID().getOntologyIRI().get());
-		//OWLDataFactory df = o.getOWLOntologyManager().getOWLDataFactory();
-		//OWLClass person = df.getOWLClass(IOR+"#Person");
-
-
-
-
 	private OwlApiQueryLayer ontoQuery;
 
 	public OwlApiLiteral(OwlApiOntoLayer ontology) {
@@ -55,8 +40,40 @@ public class OwlApiLiteral {
 	public OwlApiQueryLayer getQuery() {
 	    return this.ontoQuery;
 	}
-
-
+    
+	
+	// based on line 61 QueryLayer (version1):
+    public List<Object> getSubClassNames(String subConceptName, boolean onlyDirectSub)  {
+		List<Object> subClassNames = new ArrayList<Object>();
+		try {
+			for (OWLClass ontoClass : this.ontoQuery.getSubClasses(subConceptName, false)) {
+	            Literal l = ASSyntax.createLiteral(this.FunctorConcept, ASSyntax.createString(ontoClass.getIRI().getFragment()));
+				l.addTerm(ASSyntax.createAtom(getNameForJason(ontoClass.getIRI().getFragment())));
+				subClassNames.add(l);
+	        }
+		}
+		catch(Exception e) {
+			System.out.println("failed to parse: "+e.getMessage());
+		}
+        return subClassNames;
+	}
+    
+	// based on line 61 QueryLayer (version2):
+	public List<String> getSubClassList(String subConceptName, boolean onlyDirectSub)  {
+		List<String> subClassList = new ArrayList<String>(); //also to get strings of the names of any possible subclass
+		try {
+			for (OWLClass ontoClass : this.ontoQuery.getSubClasses(subConceptName, false)) {
+				subClassList.add(ontoClass.getIRI().getFragment()); // added
+	        }
+		}
+		catch(Exception e) {
+			System.out.println("failed to parse: "+e.getMessage());
+		}
+        return subClassList;
+	}
+	
+	
+	
     public static String removeAccents(String str) {
         str = Normalizer.normalize(str, Normalizer.Form.NFD);
         str = str.replaceAll("[^\\p{ASCII}]", "");
@@ -149,4 +166,37 @@ public class OwlApiLiteral {
 		}
 		return individuals;
 	}
+	
+	
+	//my version of getIndividualNames to have the sentence:
+	public List<String> getIndividuals(String conceptName) {
+		List<String> individuals = new ArrayList<String>();
+		try {
+			for(OWLNamedIndividual individual : ontoQuery.getInstances(conceptName)){
+				String l = getNameForJason(individual.getIRI().getFragment()).toString();
+				individuals.add(l);
+			}
+		}
+		catch(Exception e) {
+			System.out.println("failed to parse: "+e.getMessage());
+		}
+		return individuals;
+	}
+
+	
+	//added:
+	public List<String> getRanges(String domain, String propertyName) {
+		List<String> indNs = new ArrayList<String>();
+		try {
+			for(OWLNamedIndividual indN : ontoQuery.getObjectPropertyValues(domain,propertyName)){
+				String l = getNameForJason(indN.getIRI().getFragment()).toString().replace("_", " ");
+				indNs.add(l);
+			}
+		}
+		catch(Exception e) {
+			System.out.println("failed to parse: "+e.getMessage());
+		}
+		return indNs;
+	}
+	
 }

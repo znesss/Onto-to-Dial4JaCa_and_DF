@@ -1,0 +1,22 @@
+{
+  "description": "",
+  "language": "en",
+  "shortDescription": "",
+  "examples": "",
+  "linkToDocs": "",
+  "displayName": "MiroOnto2",
+  "disableInteractionLogs": false,
+  "disableStackdriverLogs": true,
+  "defaultTimezone": "Europe/Rome",
+  "ispublic": true,
+  "mlMinConfidence": 0.3,
+  "supportedLanguages": [],
+  "enableOnePlatformApi": true,
+  "onePlatformApiVersion": "v2",
+  "secondaryKey": "",
+  "analyzeQueryTextSentiment": true,
+  "knowledgeServiceConfidenceAdjustment": -0.4,
+  "dialogBuilderMode": false,
+  "baseActionPackagesUrl": "",
+  "enableSpellCorrection": false
+}
