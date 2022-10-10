@@ -12,19 +12,26 @@ import com.google.gson.GsonBuilder;
 
 public class IntentFolderIntents {
 
-	public static String main(String OntoClass, List<String> allreltrentity, String selectedDest, String folderName) {
+	public static String main(String OntoClass, List<String> allreltrentity, List<String> responses, String selectedDest, String folderName) {
 		String outputmessagejson = "";
-		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 	    MakeIntentFile intentjson = new MakeIntentFile();
 		MakeIntentResp intentjsonresp = new MakeIntentResp();
 		MakeIntentRespMsg intentjsonrespmsg = new MakeIntentRespMsg();
 		
+		
+		boolean webhook = true;   
+	    if (responses != null && !responses.isEmpty())
+	    {
+	    	webhook = false;
+			intentjsonrespmsg.setSpeech(responses); //responses
+	    }
+	   
 		//setting intent.Responses.Messages:
 		intentjsonrespmsg.setTitle("");
 		intentjsonrespmsg.setType("0");
 		intentjsonrespmsg.setTextToSpeech("");
 		intentjsonrespmsg.setLang("en");
-		intentjsonrespmsg.setSpeech(Arrays.asList("response example 1", "response example 2"));
 		intentjsonrespmsg.setCondition("");
 		
 			//setting res.parameters:
@@ -36,13 +43,11 @@ public class IntentFolderIntents {
 					String thisid  = UUID.randomUUID().toString();
 					arrresppar.add (new MakeIntentRespPar(thisid,allreltrentity.get(j),false,
 							"@"+allreltrentity.get(j),"&"+allreltrentity.get(j),
-							"",false,Arrays.asList(),Arrays.asList(),Arrays.asList(),Arrays.asList(),Arrays.asList())); //make object out of this entity
+							"none",false,Arrays.asList(),Arrays.asList(),Arrays.asList(),Arrays.asList(),Arrays.asList())); //make object out of this entity
 					
 		        }
 			    intentjsonresp.setParameters(arrresppar); //updating resp.parameter
-			}
-		
-		
+			}	
 		
 		//setting intent.Responses:
 		intentjsonresp.setResetContexts(false);
@@ -50,8 +55,7 @@ public class IntentFolderIntents {
 	    intentjsonresp.setAffectedContexts(Arrays.asList());
 //	    intentjsonresp.setParameters();
 	    intentjsonresp.setMessages(intentjsonrespmsg);
-	    intentjsonresp.setSpeech(Arrays.asList());
-	    
+	    intentjsonresp.setSpeech(Arrays.asList());	    
 	    
 		//setting the intent:
 		intentjson.setId(UUID.randomUUID().toString());
@@ -60,14 +64,13 @@ public class IntentFolderIntents {
 		intentjson.setContexts(Arrays.asList());
 		intentjson.setResponses(intentjsonresp);
 		intentjson.setPriority(50000);
-		intentjson.setWebhookUsed(false);
+		intentjson.setWebhookUsed(webhook);
 		intentjson.setWebhookForSlotFilling(false);
 		intentjson.setFallbackIntent(false);
 		intentjson.setEvents(Arrays.asList());
 		intentjson.setConditionalResponses(Arrays.asList());
 		intentjson.setCondition("");
-		intentjson.setConditionalFollowupEvents(Arrays.asList());
-		
+		intentjson.setConditionalFollowupEvents(Arrays.asList());	
 		
 		try {
 	         FileWriter filejson = new FileWriter(selectedDest+"/"+folderName+"/intents/"+OntoClass+".json");

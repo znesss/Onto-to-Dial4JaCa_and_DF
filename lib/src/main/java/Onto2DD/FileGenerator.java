@@ -140,7 +140,7 @@ public class FileGenerator {
 	        {
 	        	if (OwlApiExtract.isSubConcept(OntoClasses[i], "Intents"))
 	        	{
-	        		fileasl.write(plan1+OntoClasses[i]+plan2+"\n");
+	        		fileasl.write(plan1+OntoClasses[i]+plan2+"\n.\n");
 	        	}
 	        }
 	        fileasl.close();
@@ -197,35 +197,49 @@ public class FileGenerator {
         
         for (int i = 0 ; i<OntoClasses.length ;i++)
         {
-        	if (OwlApiExtract.isIntent(OntoClasses[i])) {
-        		
-        		List<String> allRelTraining = OwlApiExtract.getRangeIntentLst(OntoClasses[i],"has-training");
-        		Set<String> EntVal = new HashSet<String>();// Unique list of all relevant entity values to training phrases of this intent
+        	if (OwlApiExtract.isIntent(OntoClasses[i]))
+        	{	
+        		List<String> allRelTraining = OwlApiExtract.getRangeLst(OntoClasses[i],"has-training");
         		Set<String> EntNames = new HashSet<String>();
         		if (allRelTraining.size()!= 0)
         		{
         			//make usersays files:
         			outputmessagejson = outputmessagejson + IntentFolderTrainings.main(OntoClasses[i], OntoEntitiesVals, allRelTraining, selectedDest, folderName);
         			//get the relevant entity names:
-        			Set<String> oneEntVal = new HashSet<String>();
-            		for (int j = 0; j< allRelTraining.size(); j++)//extract the entities related to the training phrases of this intent:
-            		{
-            			oneEntVal = OwlApiExtract.getRangeTrainingLst(allRelTraining.get(j),"has-entity");
-            			EntVal.addAll(oneEntVal);
-                		for (String ent : OntoEntities)
-                			for (String entval :EntVal)
-                        		if (OwlApiExtract.isIndividualOf(entval,ent))
-                					EntNames.add(ent);
-                	}
+        			getEntNames(allRelTraining);
         		}
         		
         		//now make the intents with the use of entities
         		List<String> allRelTrEntity = new ArrayList<>(EntNames);
-        		outputmessagejson = outputmessagejson + IntentFolderIntents.main(OntoClasses[i], allRelTrEntity, selectedDest, folderName);
+        		List<String> responses = null; //gather the responses for this intent:
+        		responses = OwlApiExtract.getRangeLst(OntoClasses[i],"has-answer");
+				outputmessagejson = outputmessagejson + IntentFolderIntents.main(OntoClasses[i], allRelTrEntity, responses , selectedDest, folderName);
         	}
         }
         return outputmessagejson;
     }
+    
+    
+    
+    public static Set<String> getEntNames(List<String> allRelTraining)
+    {
+		Set<String> EntVal = new HashSet<String>();// Unique list of all relevant entity values to training phrases of this intent
+		Set<String> EntNames = new HashSet<String>();
+		Set<String> oneEntVal = new HashSet<String>();
+    		for (int j = 0; j< allRelTraining.size(); j++)//extract the entities related to the training phrases of this intent:
+    		{
+    			oneEntVal = OwlApiExtract.getRangeTrainingLst(allRelTraining.get(j),"has-entity");
+    			EntVal.addAll(oneEntVal);
+        		for (String ent : OntoEntities)
+        			for (String entval :EntVal)
+                		if (OwlApiExtract.isIndividualOf(entval,ent))
+        					EntNames.add(ent);
+        	}
+		
+		return EntNames;
+    }
+    
+    
     
     
 }

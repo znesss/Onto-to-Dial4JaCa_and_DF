@@ -73,16 +73,16 @@ public class OwlApiExtract {
 		}
 		return individuals;
 	}
-	//given a certain intent(class), hands out the list of training phrases
-	static List<String> getRangeIntentLst(String domainClass, String objectProperty){
+	//given a certain intent(class), hands out the list of its property values of a certain property
+	static List<String> getRangeLst(String domainClass, String objectProperty){
 		queryEngine = new  OwlApiLiteral(onto);
-		List<String> allTraining = new ArrayList<String>();
+		List<String> allResult = new ArrayList<String>();
 		for (String domain : queryEngine.getIndividuals(domainClass))
 		{
 			List<String> ranges = queryEngine.getRanges(domain,objectProperty);
-			allTraining.addAll(ranges);
+			allResult.addAll(ranges);
 		}
-		return allTraining;
+		return allResult;
 	}
 	
 	
