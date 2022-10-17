@@ -33,7 +33,7 @@ public class EntityFolderEntries {
 	    filejson.write(gson.toJson(arr)); //entryjson should be in an array
 
         filejson.close();   
-	    outputmessagejson= "Successfully wrote to the json file "+ OntoClass+ "_usersays_en.\n";
+	    outputmessagejson= "Successfully wrote to the json file "+ OntoClass+ "_entries_en.\n";
 
 		} catch (IOException e) {
 	         outputmessagejson= "An error occurred while writing to intent files.";

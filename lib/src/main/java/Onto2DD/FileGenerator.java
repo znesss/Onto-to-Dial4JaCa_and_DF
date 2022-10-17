@@ -77,10 +77,12 @@ public class FileGenerator {
 
 
     
-    public static String feedDJ(String selectedDest) {
+    public static String feedDJ(String folderName,String selectedDest) {
+        System.out.println("folderName: "+folderName);
+
     	String msgasl = "";
-    	if (makeasl (selectedDest) == true)
-    		msgasl = "Successfully wrote to the asl file communication_sample_agent.";
+    	if (makeasl (folderName,selectedDest) == true)
+    		msgasl = "Successfully wrote to the asl file "+folderName+"_agent.";
     	return msgasl;
     }
     
@@ -89,6 +91,7 @@ public class FileGenerator {
     	
     	String[] OutputResult= new String[4];
         File DFfolder = new File(selectedDest+"/"+folderName);
+        System.out.println("folderName: "+folderName);
         if (DFfolder.exists()){
             DFfolder.delete();
         }
@@ -131,14 +134,14 @@ public class FileGenerator {
     
     
 
-    public static boolean makeasl(String selectedDest) {
+    public static boolean makeasl(String folderName, String selectedDest) {
     	String plan1= "+!responder(RequestedBy, ResponseId, IntentName, Params, Contexts)\n\t: (IntentName == \"";
     	String plan2="\")\n <-";
     	try {
-            FileWriter fileasl = new FileWriter(selectedDest+"/communication_sample_agent.asl");
+            FileWriter fileasl = new FileWriter(selectedDest+"/"+folderName+"_agent.asl");
 	        for (int i = 0 ; i<OntoClasses.length ;i++)
 	        {
-	        	if (OwlApiExtract.isSubConcept(OntoClasses[i], "Intents"))
+	        	if (OwlApiExtract.isIntent(OntoClasses[i]))
 	        	{
 	        		fileasl.write(plan1+OntoClasses[i]+plan2+"\n.\n");
 	        	}
@@ -187,7 +190,7 @@ public class FileGenerator {
     
     public static String makeintentsjsons(String folderName, String selectedDest) {
     	
-		String outputmessagejson = null;
+		String outputmessagejson = "";
         // Making Intents folder contents
         File ints = new File(selectedDest+"/"+folderName+"/intents");
         if (ints.exists()){

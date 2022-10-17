@@ -104,7 +104,7 @@ public class FileGeneratorInterface {
 		        }
 		        System.out.println("selectedDest: "+selectedDest);
 		        lblDestRead.setText(selectedDest);
-		        btnAsl.setEnabled(true); //should be changed. if the destination is selected, these have to be enabled
+		        btnAsl.setEnabled(true); 
 		        btnJson.setEnabled(true);
 			}
 		});
@@ -119,7 +119,10 @@ public class FileGeneratorInterface {
 
 		btnAsl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String aslmsg=FileGenerator.feedDJ(selectedDest);
+				String Name = ontochooser.getSelectedFile().getName().toString();
+				String folderName = "";
+				folderName = Name.substring(0, Name.lastIndexOf("."));
+				String aslmsg=FileGenerator.feedDJ(folderName,selectedDest);
 				JOptionPane.showMessageDialog(null, aslmsg, "done!", 1);
 			}
 		});
